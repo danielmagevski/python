@@ -1,20 +1,16 @@
 import socket
 
-def Main():
-    host = '127.0.0.1'
-    port = 5000
-    m = 'Recebendo conexao de: '
+HOST = '127.0.0.1'     # Endereco IP do Servidor
+PORT = 8000            # Porta que o Servidor esta
 
-    s = socket.socket()
-    s.connect((host, port))
+tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+dest = (HOST, PORT)
+tcp.connect(dest)
 
-    message = raw_input("-> ")
-    while message != 'q':
-        s.send(message)
-        data = s.recv(1024)
-        print (m) + str(data)
-        message = raw_input("-> ")
-    s.close()
-
-if __name__ == '__main__':
-    Main()
+print("Digite a mensagem")
+print 'Para sair use CTRL+X\n'
+msg = raw_input()
+while msg <> '\x18':
+    tcp.send (msg)
+    msg = raw_input()
+tcp.close()
