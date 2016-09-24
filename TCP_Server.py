@@ -1,20 +1,20 @@
 import socket
 
-HOST = ''              # Endereco IP do Servidor
-PORT = 8000            # Porta que o Servidor esta
+HOST = ''              # Ip Server.
+PORT = 8000            # Port Server.
 tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 orig = (HOST, PORT)
 tcp.bind(orig)
 tcp.listen(1)
 
 while True:
-    print("Iniciando servidor na porta: \n") + str(PORT)
-    print("Aguardando Clientes.... \n")
-    con, cliente = tcp.accept()
-    print 'Concetado por', cliente
+    print("Initializing server on port: \n") + str(PORT)
+    print("Waiting Clients.... \n")
+    con, client = tcp.accept()
+    print 'Conect by', client
     while True:
         msg = con.recv(1024)
         if not msg: break
         print cliente, msg
-    print ("Finalizando conexao do cliente\n"), cliente
+    print ("Finishing client connection \n"), client
     con.close()
