@@ -1,20 +1,23 @@
-import socket
+#!/usr/bin/python3
+from socket import *
 
-HOST = ''              # Ip Server.
-PORT = 8000            # Port Server.
-tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-orig = (HOST, PORT)
-tcp.bind(orig)
-tcp.listen(1)
+HOST = ''
+PORT = int(input("What's port server going to run: "))
+s= socket(AF_INET, SOCK_STREAM)
+s.bind((HOST, PORT))
+s.listen(1)
 
 while True:
-    print("Initializing server on port: \n") + str(PORT)
-    print("Waiting Clients.... \n")
-    con, client = tcp.accept()
-    print 'Conect by', client
+    print("Waiting connetion on ", (PORT))
+    c, addr = s.accept()
+    print("Client connected ", addr)
+
     while True:
-        msg = con.recv(1024)
-        if not msg: break
-        print cliente, msg
-    print ("Finishing client connection \n"), client
-    con.close()
+        data = c.recv(1024)
+        print("", data.decode())
+
+        res = input("Server: ")
+
+        c.send(res.encode())
+
+    c.close()
