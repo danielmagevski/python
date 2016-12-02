@@ -1,1 +1,1 @@
-Simple server and client in Python.
+Some projects in Python
