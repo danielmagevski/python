@@ -2,7 +2,7 @@
 # Caesar Cipher
 
 # the string to be encrypted/decrypted
-message = raw_input("Write a mensagem that will be encrypted\n")
+message = raw_input("Write a mensagem that will be encrypted or decrypt\n")
 
 # the encryption/decryption key
 key = 2
