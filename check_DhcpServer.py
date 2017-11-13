@@ -6,7 +6,7 @@ import os
 if os.geteuid() != 0:
 	exit("You need to root privileges")
 
-print("\nPress Ctrl+D to stop\n")
+print("\nPress Ctrl+C to stop\n")
 
 conf.checkIPaddr = False
 fam,hw = get_if_raw_hwaddr(conf.iface)
