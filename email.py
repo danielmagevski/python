@@ -7,7 +7,7 @@ import smtplib
 server = smtplib.SMTP('smtp.live.com', 587)
 server.starttls()
 
-server.login("Email", "password)
+server.login("Email", "password")
 
 msg = "Send e-mail from Python"
 server.sendmail("From", "To", msg)
