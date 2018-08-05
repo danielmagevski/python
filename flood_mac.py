@@ -8,7 +8,7 @@ packet = Ether(src=RandMAC("*:*:*:*:*:*"),
         dst=RandIP("*.*.*.*")) / \
             ICMP()
 if len(sys.argv) < 2:
-    dev = "eth0"
+    dev = "eth0" #Seleciona a interface
 else:
     dev = sys.argv[1]
 print "Floodando com pacotes randomicos " + dev
