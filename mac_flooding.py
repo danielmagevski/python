@@ -14,7 +14,7 @@ packet = Ether(src=RandMAC("*:*:*:*:*:*"),
             ICMP()
 
 if len(sys.argv) < 2:
-    dev = "wlp2s0" # Set networking interface
+    dev = "eth0" # Set networking interface
 else:
     dev = sys.argv[1]
 print "\n Press Crtl+C to stop\n"
