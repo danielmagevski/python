@@ -17,6 +17,6 @@ if len(sys.argv) < 2:
     dev = "eth0" # Set networking interface
 else:
     dev = sys.argv[1]
-print "\n Press Crtl+C to stop\n"
+print "\nPress Crtl+C to stop\n"
 print "Flooding MAC at " + dev
 sendp(packet, iface=dev, loop=1)
